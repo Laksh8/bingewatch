@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Add Video</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Add Video</h1><hr>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        Title :<br><input type="text" name="title" class="form-control" placeholder="Title" required><br>
+        Discreption : <br><textarea required name="discreption" placeholder="Enter Video Disreption..." class="form-control"></textarea><br>
+        Thumbnail :<br><input type="file" name="thumbnail" required><br><br>
+        Video Url : <br><input type="url" placeholder="Enter Embedded URL of Video" class="form-control" name="video"  required><br><br>
+        <input type="submit" class="btn btn-danger">
+    </form>
+
+
+</div>
+{% endblock %}
